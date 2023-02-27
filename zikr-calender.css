@@ -1,0 +1,401 @@
+:root {
+
+    --cal-bg: #a1a1a1;
+    --cal-lightgrey: #ccc;
+    --cal-lightblack: #444;
+    --cal-white: #fff;
+
+    --cal-black: black;
+    --grey: grey;
+    --cal-transparentwhite: rgba(200, 200, 200, .9);
+    --cal-transparentblack: rgba(0, 0, 0, .6);
+    --cal-event: black;
+    --cal-ninja: red;
+
+}
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+	transition: all 300ms ease;
+}
+.calender {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 98%;
+    display: flex;
+    margin: 1em auto;
+    height: max-content;
+}
+
+#cal-event input {
+    border: none;
+    outline: none;
+    background-color: var(--cal-white);
+    color: var(--cal-black);
+    font-size: .9em;
+    padding: 2px 8px;
+    margin: 3px;
+
+    border-radius: 5px;
+}
+
+
+#evt-details {
+    width: 80%;
+    margin: 5px auto;
+    resize: none;
+    color: var(--cal-white);
+}
+#evt-details {
+    background: none;
+    border: 2px solid var(--cal-black);
+	
+    text-shadow: 1px 1px var(--cal-black);
+}
+#cal-wrap {
+    flex: 1 1 80%;
+    width: 100%;
+    display: flex;
+	
+    height: 250px;
+    padding: 10px 0;
+    background-color: var(--cal-bg);
+    transition: all 500ms ease;
+}
+#cal-wrap {
+    transition: background-color 500ms ease, color 500ms ease;
+}
+#cal-wrap > div:first-child {
+    flex: 1 1 50%;
+}
+#cal-wrap > div:last-child {
+    flex: 1 1 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#cal-wrap #cal-event,
+#cal-date,#cal-container {
+    width: 100%;
+
+}
+
+#cal-container {
+    flex-grow: 1;
+    color: var(--cal-black);
+
+}
+#cal-wrap > div input:hover {
+    background-color: #555;
+    font-weight: bold;
+}
+#cal-date {
+    display: flex;
+    align-items: center;
+    height: 15%;
+}
+#cal-date select {
+    outline: none;
+    border: none;
+    background: none;
+    color: var(--cal-black);
+    width: max-content;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: .8em;
+
+}
+#next,
+#prev {
+    text-decoration: none;
+    font-size: .8em;
+    color: var(--cal-black);
+
+    margin: 0 5px;
+    padding: 2px 8px;
+    border-radius: 100px;
+    color: var(--cal-black);
+    background: var(--cal-transparentwhite);
+    cursor: pointer;
+}
+#prev {
+    margin-right: auto;
+}
+#next {
+    margin-left: auto;
+}
+#next:active,
+#prev:active {
+
+    transform: scale(.8);
+}
+#cal-container table td {
+    text-align: center;
+    max-width: 50px;
+    overflow: hidden;
+    font-size: .7em;
+	cursor: default;
+	position: relative;
+}
+
+#cal-container {
+    width: 100%;
+    height: 85%;
+}
+#cal-container table {
+    width: 100%;
+    height: 100%;
+    color: var(--cal-black);
+    animation: pop-in .6s cubic-bezier(0, 0.9, 0.3, 1.03) forwards;
+    opacity: 0;
+
+}
+table .day td:hover .dd {
+    cursor: default;
+    background-color: var(--cal-transparentwhite);
+    color: var(--cal-black);
+	transition: all 100ms ease;
+}
+
+.blank .db {
+    color: var(--cal-lightgrey);
+    background-color: var(--cal-lightgrey);
+
+}
+.today .dd {
+
+    background-color: var(--cal-event);
+    color: var(--cal-white);
+	
+
+}
+.evt {
+    color: var(--cal-white);
+    font-size: 0em;
+    padding: 3px;
+	background-color: var(--cal-ninja);
+	border-radius: 50%;
+    margin: 0 auto;
+    text-wrap: break-word;
+    display: block;
+	position: absolute;
+	top: 30%;
+	right: 10%;
+}
+#evt-head {
+    font-size: 1em;
+    color: var(--cal-black);
+}
+#evt-date {
+    font-size: .9em;
+    color: var(--cal-black);
+}
+#evt-del.ninja {
+    background-color: var(--cal-ninja);
+    color: white;
+
+}
+#cal-event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	
+}
+#cal-wrap > div:last-child > * {
+
+    width: 80%;
+    margin: 0 auto;
+}
+.bottom-btns {
+    width: 100%;
+    margin-top: auto !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+#cal-event .btns {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--cal-black);
+    margin: 10px auto;
+
+}
+.bottom-btns input {
+    border: none;
+    outline: none;
+    background-color: var(--cal-white);
+    color: var(--cal-black);
+    padding: 5px;
+    font-size: .8em;
+
+    margin: 5px 2px;
+
+    border-radius: 5px;
+}
+.active .dd {
+    background-color: var(--cal-white);
+    color: var(--cal-black);
+    font-weight: bold;
+}
+
+
+.colors {
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.colors p {
+    font-size: .8em;
+    color: var(--cal-black);
+
+}
+
+.colors span {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+    transform: scale(.6);
+    transition: all 200ms ease-in;
+}
+
+.colors span:nth-of-type(1) {
+    background-color: #ddd;
+}
+.colors span:nth-of-type(3) {
+    background-color: darkred;
+}
+.colors span::after{
+	content:"";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 0%;
+    height: 0%;
+	transition: all 700ms ease;
+	border-radius: 50%;
+	background: transparent;
+	border: 2px solid teal;
+	z-index:-1;
+}
+.colors span:hover::after,
+.colors span.active::after{
+    width: 80%;
+    height: 80%;
+    transform: scale(1.5);
+}
+
+
+.prayer-time {
+    flex: 1 1 80%;
+    width: 100%;
+    height: 250px;
+    background-color: var(--cal-bg);
+    color: var(--cal-black);
+    margin: 1em auto;
+
+}
+.prayer-time > h1 {
+    font-size: 1em;
+    text-align: center;
+    margin: 5px auto;
+}
+.prayer-time > span {
+    font-size: .9em;
+    text-align: center;
+    margin: 2px 0;
+    display: block;
+}
+.prayer-time .solat {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 500ms ease;
+}
+.prayer-time .solat > div {
+    flex: 1 1 80%;
+    margin: 0px 10px;
+    text-align: center;
+    line-height: 1.5em;
+    font-size: .9em;
+
+}
+
+.solat div h3 {
+    font-weight: 450;
+    font-size: 1.1em;
+    margin: 5px 0;
+}
+
+
+@keyframes pop-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem) scale(-1);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .calender {
+        font-size: 1em;
+    }
+    #cal-wrap {
+        flex: 1 1 60%;
+        margin: 10px;
+    }
+    #cal-wrap > div:first-child {
+        flex: 1 1 60%;
+    }
+    #cal-wrap > div:last-child {
+        flex: 1 1 40%;
+    }
+    #evt-details {
+        margin: 10px auto;
+        
+        padding: 5px;
+        font-size: 1.2em;
+    }
+	.evt {
+		padding: 5px;
+		top: 20%;
+		right: 15%;
+	}
+	table .day td .dd ,
+	.blank .db ,
+	.today .dd {
+		padding: 5px 0;
+	}
+    .prayer-time {
+        flex: 1 1 20%;
+        margin: 10px;
+
+    }
+    #cal-wrap > div:last-child input {
+        width: 30%;
+    }
+    .colors span {
+        transform: scale(1);
+
+    }
+
+    .colors span:hover,
+    .colors span.active {
+        transform: scale(1.05);
+    }
+}

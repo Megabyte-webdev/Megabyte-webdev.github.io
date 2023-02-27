@@ -1,0 +1,834 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+
+}
+
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 0px;
+    background: var(--light-grey);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--grey);
+}
+
+body {
+    background: var( --white);
+    font-family: arial, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+	word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body, button, input, textarea {
+	
+    font-family: gilroy,helveticaneue-light,helvetica neue light,helvetica neue,Helvetica,Arial,lucida grande,sans-serif;
+   
+    text-rendering: optimizeLegibility;
+}
+
+html,body{
+	scroll-behavior: smooth;
+}
+
+    
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0%;
+    margin: auto;
+    background: var(--white);
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    visibility: hidden;
+    opacity: 0;
+    color: var(--black);
+    overflow: hidden;
+    transform: scale(-1);
+    transition: all 500ms ease, transform 500ms linear;
+}
+.modal.active {
+    opacity: 1;
+    transition: all 400ms, transform 1s cubic-bezier(0,1,.5,1);
+    z-index: 100000000;
+    visibility: visible;
+    transform: scale(1);
+}
+nav{
+
+transition: all 600ms ease;
+}
+nav.slideup{
+transform: translatey(-150%);
+    visibility: hidden;
+transition: all 600ms ease 150ms,visibility 600ms 600ms;
+	
+	
+}
+
+
+#heading {
+    position: fixed;
+    top: 40px;
+    z-index: 1000000;
+    margin: 0 auto;
+    width: 100%;
+	height: 40px;
+	
+    font-size: 1.2em;
+    text-align: center;
+
+    background: var(--white);
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 600ms ease;
+	visibility: visible;
+}
+
+#heading.slideup{
+    transform: translatey(-150%);
+    visibility: hidden;
+transition: all 600ms ease 150ms,visibility 600ms 600ms;
+}
+
+.show-all {
+    display: block;
+    outline: none;
+    border: none;
+    width: 200px;
+	
+    margin: 5px auto;
+	margin-top: 0;
+    padding: 10px;
+    border: 1px solid var(--black);
+    cursor: pointer;
+    transition: all 500ms ease;
+}
+.show-all:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+
+
+.tags {
+    width: 100%;
+    height: 40px;
+    margin: 10px auto;
+    position: fixed;
+    top: 70px;
+    z-index: 10000;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: var(--white);
+    transition: all 400ms ease 200ms;
+
+}
+.tags.slideup{
+    transform: translatey(-80px);
+	transition: all 600ms ease;
+	z-index: 10000000;
+	height: 50px;
+	
+}
+.tags.slideup > div {
+	height: 80%;
+	
+}
+.tags .prayers {
+    flex: 0 0 40%;
+    height: 100%;
+    border: 1px solid var(--black);
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    background: var(--white);
+    text-align: center;
+	transition: all 600ms ease;
+}
+.tags .search {
+    flex: 0 0 50%;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--black);
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    background: var(--white);
+	transition: all 600ms ease;
+position: relative;
+}
+.tags .search * {
+    height: 100%;
+
+}
+.tags .search a {
+    text-decoration: none;
+    width: 25%;
+	margin: 0 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--light-black);
+	color: var(--white);
+    height: 90%;
+	
+    border-radius: 3px;
+}
+.tags .search a:hover {
+    background: var(--grey);
+    transition: all 500ms ease;
+}
+.tags .search a:active svg {
+    stroke: var(--white)var(--white);
+    transform: scale(.8);
+}
+.search a:hover svg {
+    
+}
+.tags .search input {
+    width: 75%;
+    outline: none;
+    border: none;
+    background: none;
+	text-indent: 5px;
+}
+
+.search ::placeholder {
+    color: var(--black);
+}
+
+.dropdown{
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	margin: 5px 0;
+	width: 80%;
+    height: 150px !important;
+	background: var(--medium-white);
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	z-index: 100;
+}
+.dropdown p{
+	font-size: .9em;
+    padding: 5px 10px;
+    color: var(--black) ;
+	text-align: left;
+	order: 5;
+
+}
+.dropdown p:hover{
+	background: var(--light-grey);
+}
+.dropdown p.predict{
+	order: 2;
+}
+.dropdown p.accurate{
+	order: 1;
+	background: var(--light-black);
+	color: var(--white);
+}
+.dropdown::-webkit-scrollbar{
+    width: 6px;
+    height: 0;
+    background: var(--light-grey);
+	border-radius: 100px;
+
+}
+.dropdown::-webkit-scrollbar-thumb {
+    background: var(--black);
+    border-radius: 100px;
+    height: 12px;
+}
+
+.tags .prayers p {
+    font-size: .8em;
+    text-align: center;
+    padding: 5px;
+    margin: 3px 2px;
+    border-radius: 3px;
+	flex: 1 1 50%;
+}
+.tags .prayers p:first-child {
+	
+    background: var(--light-black);
+	color: var(--white);
+	display: flex;
+    align-items: center;
+	justify-content: center;
+	height: 85%;
+}
+.prayers p > span {
+    font-weight: bolder;
+}
+
+
+
+main {
+    margin-top: 100px;
+    width: 100vw;
+    height: max-content;
+
+display: block;
+    
+}
+
+#dua-collections {
+    background: #eee;
+    margin: 1em auto;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(450px*6.15);
+    overflow: hidden;
+}
+
+.dua {
+    width: 90%;
+    height: max-content;
+    margin: 1em auto;
+    padding: 1em;
+}
+.dua h4 {
+    font-size: 1.2em;
+    color: darkred;
+    text-shadow: -1px -1px var(--black);
+    letter-spacing: 2px;
+    width: 100%;
+
+
+}
+.dua h4:first-letter {
+    font-size: 1.3em;
+}
+.dua div {
+    width: 95%;
+    height: max-content;
+   
+    overflow: hidden;
+    padding: 10px;
+    color: var(--black);
+    margin-top: 5px;
+    font-size: 1.1em;
+    word-spacing: 1px;
+    line-height: 1.4em;
+    transition: all 500ms ease;
+}
+.arabic {
+    font-size: 1.2em;
+    text-align: right;
+    direction: rtl;
+    filter: brightness(100%);
+    webkit-font-smoothing: antialiased;
+	text-shadow: 1px 1px var(--white);
+}
+.transliteration {
+    font-size: .9em;
+    color: var(--light-black);
+    text-align: right;
+    margin: 5px 0;
+
+}
+.translation {
+    font-size: .9em;
+    margin: 10px 0;
+}
+
+.dua div em,
+.dua-sub div em {
+    color: teal;
+	font-weight: bold;
+}
+.dua-sub-collections {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 450px;
+    padding-top: 10px;
+    background: #aaa;
+    margin: 1em auto;
+
+}
+.dua-sub-collections > div {
+    width: 95%;
+    display: flex;
+    height: 100%;
+    
+    margin: 5px auto;
+	
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    
+    position: relative;
+    order: 2;
+	transition: scroll-behavior 100ms ease;
+}
+.dua-sub-collections h1 {
+    order: 1;
+    font-size: 1.2em;
+    color: darkred;
+    text-shadow: -1px -1px var(--black);
+    letter-spacing: 2px;
+    width: 100%;
+    text-align: center;
+    margin: 10px auto;
+
+    transition: all 400ms ease;
+}
+.dua-sub-collections .dua-sub:first-child {
+    border-left: 2px solid var(--light-grey);
+}
+
+.dua-sub-collections > div .dua-sub {
+    align-self: stretch;
+    margin: 5px;
+   
+    flex: 1 0 85%;
+    width: 100%;
+    height: 95%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 10px;
+    background: var(--medium-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+	transform: translateZ(-100em);
+	z-index: 0;	
+	transition: z-index 400ms ease,box-shadow 400ms ease,position 400ms ease;
+	
+}
+
+
+.dua-sub h4 {
+    max-width: 80%;
+    text-align: center;
+    font-size: .9em;
+    color: green;
+    text-shadow: -1px -1px var(--black);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid green;
+}
+.dua-sub div {
+    font-size: .9em;
+    line-height: 1.4em;
+
+}
+.dua-sub .arabic {
+font-size: 1.2em;
+
+}
+.dua-sub .icon {
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	position: absolute;
+    top: 5px;
+    
+    right: 5px;
+	color: black;
+}
+.dua-sub .icon:hover {
+    background: var(--light-grey);
+}
+.dua-sub.result .icon:hover {
+    background: var(--transparent-black);
+
+}
+.info {
+    position: absolute;
+    top: 30px;
+	right: 5px;
+    background: var(--light-black);
+    color: var(--white) !important;
+
+    width: max-content;
+
+}
+
+.info p {
+    font-size: .9em;
+    padding: 7px 10px;
+    
+	cursor: pointer;
+
+}
+.info p:hover {
+    background: var(--light-black);
+}
+.info p+p {
+    border-top: var(--medium-white);
+}
+
+
+.link {
+    text-align: center;
+    
+	height: max-content;
+	max-width: max-content;
+max-height: 20px;
+    z-index: 50;
+	margin: 10px auto;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+
+    flex-wrap: wrap;
+
+}
+.link a.cell {
+font-size: .6em;
+font-weight: bolder;
+    margin: 1px 3px;
+    width: 12px;
+    height: 12px;
+    line-height: 12px;
+    border-radius: 50%;
+    background-color: var(--white);
+    transition: all 400ms ease;
+    cursor: pointer;
+   
+
+}
+.link a.cell:hover,
+.link a.active {
+    background: var(--light-black);
+    transform: scale(1.2);
+	color: var(--white)
+}
+
+
+#Dua-loader >div {
+
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    perspective: 800px;
+}
+#Dua-loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+
+    background: rgba(0,0,0,.8);
+    z-index: 0;
+    display: none;
+}
+#Dua-loader.active {
+    z-index: 1000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inner {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.inner.one {
+    left: 0%;
+    top: 0%;
+    animation: rotate-one 1s linear infinite;
+    border-bottom: 3px solid #EFEFFA;
+}
+
+.inner.two {
+    right: 0%;
+    top: 0%;
+    animation: rotate-two 1s linear infinite;
+    border-right: 3px solid #EFEFFA;
+}
+
+.inner.three {
+    right: 0%;
+    bottom: 0%;
+    animation: rotate-three 1s linear infinite;
+    border-top: 3px solid #EFEFFA;
+}
+
+.result {
+    background: var(--light-black);
+    color: var(--white) !important;
+}
+.result > div {
+    background: var(--grey);
+}
+.result > .link {
+    background: none;
+	color: var(--black)
+}
+.result > .link a.cell:hover,
+.result > .link a.cell.active{
+     background: var(--black);
+	color: var(--white)
+}
+.dua.result {
+	background: #222 !important;
+	
+}
+.dua.result .arabic,
+.dua.result .translation{
+	color: var(--white);
+}
+.dua.result div em,
+.dua-sub-collections.result .dua-sub em{
+	text-shadow: 1px 1px black;
+}
+.result .dua-sub {
+    background: #222 !important;
+	
+}
+.result .dua-sub .icon{
+    color: var(--white) ;
+}
+.result .dua-sub .icon:hover{
+    background: var(--light-black) ;
+}
+.result .dua-sub .info{
+    background:  var(--grey)!important;
+	color: var(--black) !important;
+}
+.result .dua-sub .info:hover{
+    background:  var(--light-grey)!important;
+	color: var(--white) !important;
+}
+.result .transliteration {
+    color: var(--light-grey);
+}
+.result-text {
+    background: white;
+    color: black;
+}
+.result .arabic {
+text-shadow: 1px 1px var(--black);
+}
+.enlarge{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+	left: 0;
+   
+	margin: 0;
+    width: 100%;
+    min-height: 100%;
+    z-index: 10000000000;
+
+    
+    transition: all 400ms, transform 1s ease;
+    
+    filter: brightness(100%);
+ 
+}
+.enlarge > div{ 
+	scroll-behavior: smooth !important;
+	transition: scroll-behavior 100ms ease;
+}
+.enlarge > div .dua-sub{ 
+	flex: 1 0 98% !important;
+	scroll-snap-align: center !important;
+	
+
+    
+   
+   
+}
+.enlarge{
+    line-height:3em;
+	font-size: 1em;
+}
+
+.enlarge h4, .enlarge h1{
+line-height: .9em;
+}
+.enlarge .arabic {
+    font-size: 2em;
+}
+.enlarge .info {
+	font-size: 1.1em;
+	line-height: 1.1em;
+}
+.enlarge .translation {
+    font-size: 1.1em;
+	
+}
+.enlarge .transliteration {
+	font-size: 1.1em;
+	
+}
+.enlarge .link a.cell {
+font-size: .7em;
+
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+}
+@keyframes rotate-one {
+    0% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
+}
+
+@keyframes rotate-two {
+    0% {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+
+@keyframes rotate-three {
+    0% {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+    ::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+
+    }
+    .dua-sub::-webkit-scrollbar {
+        width: 2px;
+    }
+
+    .tags .prayers p {
+        font-size: .8em;
+        line-height: 1em;
+
+    }
+	.dua-sub-collections > div{
+		webkit-overflow-scrolling: touch;
+	}
+	.dua-sub-collections > div .dua-sub{
+		scroll-snap-align: center;
+	}
+	
+	.enlarge{
+		line-height:3em;
+		font-size: 1em;
+	}
+	.enlarge > div div{
+		line-height: 3em;
+	}
+	
+}
+
+@media screen and (min-width: 700px) {
+	
+    .modal {
+        width: 30%;
+    }
+    .tags .prayers {
+        flex: 0 0 30%;
+    }
+	.tags .prayers p {
+		padding: 10px 5px;
+		flex: 1 1 40%;
+		font-size: .95em;
+	}
+    .tags .search {
+        flex: 0 0 30%;
+    }
+    
+    .tags {
+        width: 100%;
+		height: 50px;
+    }
+	#dua-collections {
+   
+		max-height: calc(450px*6.8);
+	}
+	.dua-sub-collections > div {
+		
+		width: 100%;
+	}
+	.dua-sub-collections > div .dua-sub{
+		flex: 1 0 35%;
+		margin: 10px;
+		width: 100%;
+		font-size: .9em;
+		
+	}
+	.dua-sub.center{
+		scroll-snap-align: center;
+	}
+	.dua div,
+	.dua-sub div{
+		line-height: 3em;
+	}
+	.arabic {
+		font-size: 1.5em;
+	}
+	.translation {
+		font-size: 1.1em;
+		line-height: 1.5em;
+	}
+	.transliteration {
+		font-size: 1.15em;
+	
+	}
+	.link a.cell {
+		font-size: .8em;
+		font-weight: bolder;
+		margin: 1px 3px;
+		width: 15px;
+		height: 15px;
+		line-height: 15px;
+		
+	}
+	.show-all {
+		width: 60%;
+	}
+}
+@media screen and (min-width: 700px) and (max-width: 900px) {
+    .dua-sub-collections > div .dua-sub{
+		flex: 1 0 45%;
+		
+	}
+	
+
+}

@@ -1,0 +1,156 @@
+:root {
+    --orange: orangered;
+    --light-grey: #bbb;
+    --light-black: #222;
+    --white: white;
+    --medium-white: #ddd;
+
+    --black: black;
+    --grey: grey;
+    --transparent-white: rgba(255, 255, 255, .7);
+    --transparent-black: rgba(0, 0, 0, .6);
+
+    --offset: 187;
+    --duration: 1.4s;
+
+}
+
+nav {
+    width: 100%;
+    height: max-content;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: flex;
+    background: var( --light-black);
+    z-index: 100000000;
+     visibility: visible;
+    align-items: center;
+transform: none;
+}
+nav * {
+    margin: 0 10px;
+    cursor: default;
+}
+
+nav .icon {
+    display: none;
+    cursor: pointer;
+}
+nav a {
+    text-decoration: none;
+    cursor: pointer;
+}
+nav a,
+nav .logo {
+    color: var( --white);
+    padding: 12px 10px;
+    font-size: 1em;
+    font-weight: 400;
+}
+
+nav .logo {
+    margin-right: auto;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px 10px;
+}
+
+nav a:hover {
+    background: var( --white);
+    color: var( --black);
+}
+
+.menu-toggle {
+    width: 22px;
+    position: relative;
+    transition: all .2s;
+    cursor: pointer;
+}
+.menu-toggle div {
+    width: 100%;
+    height: 3px;
+    background: var( --white);
+    border-radius: 10px;
+    transition: all .2s;
+    margin: auto;
+    cursor: pointer;
+}
+.menu-toggle .one,
+.menu-toggle .two {
+    margin-bottom: 5px;
+}
+.menu-toggle.active .one {
+    transform: rotate(45deg) translate(6px ,5px);
+}
+.menu-toggle.active .two {
+    transform: translatex(-20px);
+    opacity: 0;
+}
+.menu-toggle.active .three {
+    transform: rotate(-45deg) translate(6px ,-6px);
+}
+nav .icon:hover ,
+nav .icon.active {
+    background: var( --transparent-white);
+}
+nav .icon:hover .menu-toggle div {
+    background: var( --black);
+}
+nav .icon.active menu-toggle div,
+nav .menu-toggle.active div {
+    background: var( --black);
+}
+
+
+@media screen and (max-width: 600px) {
+    ::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+
+    }
+   
+    nav.responsive {
+        flex-wrap: wrap;
+        background: var( --light-black);
+    }
+    nav.responsive a:hover {
+        background: var( --transparent-white);
+    }
+    nav a:not(a.icon) {
+        width: 100%;
+        text-align: left;
+
+    }
+
+    nav a {
+        display: none;
+    }
+    nav.responsive a:not(.logo) {
+        order: 5;
+        display: block;
+        flex: 1 1 100%;
+        margin: 0;
+    }
+    nav .logo {
+        display: block;
+    }
+    nav p.logo {
+        margin-left: auto;
+        margin-right: 60px;
+    }
+    nav a.icon {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 10;
+        margin: 2px 2px !important;
+        padding: 8px 0px;
+        display: flex;
+        align-items: center;
+        height: max-content;
+
+    }
+}

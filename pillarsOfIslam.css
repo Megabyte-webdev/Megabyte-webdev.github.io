@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+
+}
+
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 0px;
+    background: var(--light-grey);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--grey);
+}
+
+body {
+    background: var( --white);
+    font-family: arial, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+	word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body, button, input, textarea {
+	
+    font-family: gilroy,helveticaneue-light,helvetica neue light,helvetica neue,Helvetica,Arial,lucida grande,sans-serif;
+   
+    text-rendering: optimizeLegibility;
+}
+
+html,body{
+	scroll-behavior: smooth;
+}
+
+    
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0%;
+    margin: auto;
+    background: var(--white);
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    visibility: hidden;
+    opacity: 0;
+    color: var(--black);
+    overflow: hidden;
+    transform: scale(-1);
+    transition: all 500ms ease, transform 500ms linear;
+}
+.modal.active {
+    opacity: 1;
+    transition: all 400ms, transform 1s cubic-bezier(0,1,.5,1);
+    z-index: 100000000;
+    visibility: visible;
+    transform: scale(1);
+}
+
+
+#heading {
+    position: fixed;
+    top: 40px;
+    z-index: 10000;
+    margin: 0 auto;
+    width: 100%;
+	height: 40px;
+	
+    font-size: 1.2em;
+    text-align: center;
+
+    background: var(--white);
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 400ms ease 200ms;
+	visibility: visible;
+}
+nav{
+
+transition: all 600ms ease;
+}
+
+nav.slideup{
+transform: translatey(-150%);
+    visibility: hidden;
+transition: all 600ms ease 150ms,visibility 600ms 600ms;
+	
+	
+}
+
+#heading.slideup{
+    transform: translatey(-40px);
+    transition: all 600ms ease;
+	z-index: 10000000;
+	height: 40px;
+   text-transform: uppercase;
+   
+     -webkit-text-stroke: 1px #458334;
+    -ms-text-stroke: 1px #458334;
+    -o-text-stroke: 1px #458334;
+    text-stroke: 1px #458334;
+}
+
+main {
+position: relative;
+    top: 70px;
+    width: 100vw;
+    height: max-content;
+
+display: block;
+    
+}
+
+.search-bar {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 95%;
+    margin: 10px auto;
+}
+
+.search-bar i {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 300ms ease;
+    border-radius: 50%;
+}
+.search-bar i:hover {
+    background: #ddd;
+
+    transform: scale(1.3);
+}
+.search-bar i:hover svg {
+    transform: scale(.77);
+
+}
+.search-bar i img {
+    width: 25px;
+    height: 25px;
+}
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 15px 0;
+    width: 100%;
+    background: #fafafa;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+
+    font-size: 1em;
+    font-weight: 300;
+    color: lightgrey;
+    text-align: left;
+    text-indent: 40px;
+    transition: all 1s ease;
+}
+.search-bar input:focus {
+    background: #eaeaea;
+    color: #222;
+
+}
+
+.search-icon {
+    left: 10px;
+
+}
+.camera {
+    right: 50px;
+
+}
+.voice {
+    right: 15px;
+
+}
+.voice:hover .round,
+.voice.active .round {
+    fill: currentColor;
+}
+.camera:hover .snap {
+    fill: currentColor;
+
+}
+
+
+main>*{
+width:90%;
+margin: 1em auto;
+height: max-content;
+font-size: 1em;
+
+}
+p{
+line-height: 1.5em;
+}
+.intro:first-letter{
+font-size: 2.5em;
+
+}
+.impo{
+font-size: 1em;
+color:  #342575;
+text-transform: uppercase;
+}
+section >*{
+display: list-item;  
+
+}
+main > section{
+padding: 5px;
+}
+
+.blog{
+list-style-type: alpha;
+}
+.blog h1{
+font-size: 1.2em;
+color: darkred;
+text-decoration: underline;
+
+}
+.blog q{
+display: block;
+font-weight: bold;
+margin: 5px auto;
+width: 80%;
+
+}
+.arabic{
+display: block;
+font-weight: bold;
+margin: 5px auto;
+width: 90%;
+direction: rtl;
+webkit-font-smoothing: antialiased;
+	text-shadow: 1px 1px var(--white);
+transform : scale(1,1.2);
+
+}
+.blog .transl{
+display: block;
+width: 90%;
+margin: 5px auto;
+color:#555;
+font-style: italic;
+}
+.blog b.arab{
+font-size: 1.1em;
+color:#445677;
+direction: rtl;
+
+}
+@keyframes rotate-one {
+    0% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
+}
+
+@keyframes rotate-two {
+    0% {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+
+@keyframes rotate-three {
+    0% {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+    ::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+
+    }
+nav a.icon {
+        
+        margin: 5px 2px !important;
+}
+}
+
+@media screen and (min-width: 700px) {
+	
+    .modal {
+        width: 30%;
+    }
+    .tags .prayers {
+        flex: 0 0 30%;
+    }
+	.tags .prayers p {
+		padding: 10px 5px;
+		flex: 1 1 40%;
+		font-size: .95em;
+	}
+    .tags .search {
+        flex: 0 0 30%;
+    }
+    
+    .tags {
+        width: 100%;
+		height: 50px;
+    }
+
+}
+@media screen and (min-width: 700px) and (max-width: 900px) {
+  
+	
+
+}

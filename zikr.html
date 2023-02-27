@@ -1,0 +1,2270 @@
+<!Doctype html>
+<html>
+<meta  charset="UTF-8">
+<meta  name="description"  content="Marketing Template">
+<meta  name="keywords"  content="HTML, CSS, JavaScript">
+<meta  name="author"  content="Afolabi Mubarak">
+<meta content="device-width, initial-scale=1" name="viewport" />
+
+<head>
+
+    <title>Zikr organization</title>
+    <link rel="stylesheet" href="zikr.css">
+ <link rel="stylesheet" href="nav.css" />
+
+    <!-- calender Css -->
+    <link rel="stylesheet" href="zikr-calender.css">
+
+    <script src="nav.js"></script>
+    
+    <script src="surah.js"></script>
+
+    <script src="zikr.js"></script>
+    
+    
+    <!-- calender script -->
+
+    <script src="zikr-calender.js"></script>
+
+</head>
+<body>
+    <div id="Quran-loader">
+        <div>
+            <div class="inner one"></div>
+            <div class="inner two"></div>
+            <div class="inner three"></div>
+        </div>
+    </div>
+    <div class="modal">
+        <div class="modal-head">
+            <div>
+                <p class="surah-name">
+                    surah
+                </p>
+                <p class="surah-number">
+                    surah no
+                </p>
+            </div>
+
+            <p class="close">
+                &times;
+            </p>
+        </div>
+        <div class="modal-content">
+            <h1 class="surah-name">Suratul-Name</h1>
+            <p class="surah-translation">
+                Translation
+            </p>
+            <small class="surah-name-english">
+                Translation
+            </small>
+
+
+            <div class="arabic">
+
+            </div>
+
+        </div>
+        <div class="modal-foot">
+            <div>
+                <p class="surah-type">
+                    type
+                </p>
+                <p class="surah-verse">
+                    verse
+                </p>
+            </div>
+
+            <audio id="Mainplayer" src="quran.mp4" controls></audio>
+            <!--<div id="Mainplayer">
+                                        <div id="play-pause">Play</div>
+                                    <audio src="quran.mp4" ></audio>-
+                                        <div class="current-time">00:00</div>
+                                        <input type= "range" max="100" min="1" class="fill-duration"/>
+                                        <div class="total-duration">00:00</div>
+
+                                    </div>-->
+            <a href="javascript:void();">
+                <svg viewBox="0 0 24 24" stroke="currentColor" width="24" fill="transparent" height="24">
+                    <path id="speaker1" class="round" fill="none" d="M8 12L8 4A 5 5 0 0 1 16 4L16 12A 5 5 0 0 1 8 12" />
+                    <path id="speaker2" d="M4 8A 5 5 0 0 0 20 8M12 16V22M8 22H16" />
+                </svg>
+            </a>
+
+        </div>
+    </div>
+    <nav class="nav">
+        <p class="logo">
+            Islamic
+        </p>
+        <a href="dua.html">Recitations(Duas)</a>
+
+        <a href="#plans">Obligations</a>
+
+        <a href="#team">Team</a>
+
+        <a href="zikr-org.html">Contact</a>
+
+        <a href="javascript:void();" class="icon" onclick="toggle()">
+
+            <div class="menu-toggle ">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+            </div>
+
+        </a>
+
+    </nav>
+    <div class="slider">
+        <svg id="loader" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"> <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle> </svg>
+
+        <div class="slide active">
+            <h1> Read the Hadiths of the Prophet Mohammad (S.A.W) </h1>
+            <p>
+                
+                     ما يصيب المسلم من نصب ولا وصب ولا همّ ولا حزن ولا أذى ولا غمّ - حتى الشوكة يشاكها - إلا كفّر الله بها مِن خطاياه 
+
+            </p>
+            <div class="btn">
+                <a class="active" href="#hadiths">Read More Hadiths... </a>
+
+               
+            </div>
+            <div class="image"></div>
+
+        </div>
+
+        <div class="slide">
+            <h1> Pillars of Islam </h1>
+            <p>
+                There are five(5) Pillars as Islam is concern.
+<ul id="list"style="width: 80%; text-wrap: break-word; font-size: .7em; margin : 3px auto; display: none;">
+<li>Believe in Allah and his Prophet</li>
+<li> Solat </li>
+<li> Zakat </li>
+<li>Sawn(Fasting) </li>
+<li> Hajj </li>
+</ul>
+            </p>
+            <div class="btn">
+                <a class="active" href="pillarsOfIslam.html">Read More... </a>
+
+                <a onclick="toggleList(this)">Show The List </a>
+            </div>
+
+            <div class="image"></div>
+
+        </div>
+
+        <div class="slide">
+            <h1> Read Quran Everyday. Add on Your Daily Routine. </h1>
+            <p>
+                verily it is you and my Messenger who shall be victorious. Allah has decree, he who he show allegience to is never abased.
+            </p>
+            <div class="btn">
+                <a class="active" href="#Quran">Read Quran </a>
+
+                <a href="#Quran">Quran Audio </a>
+            </div>
+            <div class="image"></div>
+
+        </div>
+
+        <div class="slide">
+            <h1> Obligations and Responsibilities of a Muslim </h1>
+            <p>
+                verily it is you and my Messenger who shall be victorious. Allah has decree, he who he show allegience to is never abased.
+            </p>
+            <div class="btn">
+                <a class="active">Read Quran </a>
+
+                <a>Quran Audio </a>
+            </div>
+            <div class="image"></div>
+
+        </div>
+
+        <div class="slide">
+            <h1> Read some surahs of the holy Qur'an </h1>
+            <p>
+                verily it is you and my Messenger who shall be victorious. Allah has decree, he who he show allegience to is never abased.
+            </p>
+            <div class="btn">
+                <a class="active" href="#Quran">Read Quran Surahs... </a>
+
+            </div>
+            <div class="image"></div>
+
+        </div>
+
+        <div Id="controls">
+
+
+            <span class="prev"> &#10094;</span>
+            <span class="next"> &#10095;</span>
+        </div>
+
+        <div class="link">
+            <!--implemented from js-->
+        </div>
+
+    </div>
+
+    <!-- Calender -->
+    <div class="calender">
+        <div id="cal-wrap">
+            <div>
+                <!-- (A) PERIOD SELECTOR -->
+                <div id="cal-date">
+                    <span id="prev"> &#10094;</span>
+
+                    <select id="cal-mth"></select>
+                    <select id="cal-yr"></select>
+
+                    <span id="next"> &#10095;</span>
+
+                </div>
+
+                <!-- (B) CALENDAR -->
+                <div id="cal-container"></div>
+            </div>
+            <div>
+
+                <!-- (C) EVENT FORM -->
+                <form id="cal-event">
+                    <div class="btns">
+                        <input id="evt-del" type="button" value="Delete" />
+                        <input id="events" type="button" value="Event" />
+                    </div>
+                    <h1 id="evt-head"></h1>
+                    <div id="evt-date"></div>
+                    <textarea rows="2" id="evt-details" required></textarea>
+
+                </form>
+                <div class="colors">
+                    <p>
+                        Colors:
+                    </p>
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="bottom-btns">
+                    <input id="evt-close" type="button" value="Cancel" />
+                    <input id="evt-save" type="button" value="Save" />
+                </div>
+            </div>
+
+        </div>
+
+        <div class="prayer-time">
+            <h1>Prayer Timing</h1>
+            <span class="date english">Saturday, May 30 2022 </span>
+            <span class="date arabic"> Saturday, Sul-qhojah 23 1443</span>
+            <div class="solat">
+                <div class="solat-names">
+                    <h3>Solat</h3>
+                    <p>
+                        Fajr
+                    </p>
+                    <p>
+                        Zhuri
+                    </p>
+                    <p>
+                        Asri
+                    </p>
+                    <p>
+                        Mogrib
+                    </p>
+                    <p>
+                        Ishai
+                    </p>
+
+                </div>
+                <div class="solat-time-start">
+                    <h3>Start</h3>
+                    <p>
+                        6:00
+                    </p>
+                    <p>
+                        1:30
+                    </p>
+                    <p>
+                        3:00
+                    </p>
+                    <p>
+                        6:00
+                    </p>
+                    <p>
+                        7:30
+                    </p>
+
+                </div>
+                <div class="solat-time-end">
+                    <h3>Ellapse</h3>
+                    <p>
+                        6:00
+                    </p>
+                    <p>
+                        1:30
+                    </p>
+                    <p>
+                        3:00
+                    </p>
+                    <p>
+                        6:00
+                    </p>
+                    <p>
+                        7:30
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="data-readable"></div>
+    <main>
+
+
+        
+        <div class="Quran" id="Quran">
+		<h1 class="main-heading">Read Holy Quran With Translation & Tefsir Of Every Ayat</h1>
+            <div class="tags">
+                <div class="surahs">
+                    <p>
+                        Show Surahs
+                    </p>
+                    <p class='verse-list'>
+						Show <span>...</span>
+					</p>
+
+                </div>
+
+                <div class="search">
+                    <input type="search" placeholder="search Al-Fatihah..." />
+                    <a title="search">
+                        <svg width="20" height="20" stroke="currentColor" fill="transparent" style="stroke-width: 2" viewBox="0 0 24 24">
+                            <circle cx="10" cy="10" r="9" />
+                            <path d="m 17 17 l 5 5" />
+
+                        </svg>
+                    </a>
+
+                </div>
+
+            </div>
+            <div id="verses">
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <div class="verse">
+                    <div>
+                        <span></span>
+                        <h3></h3>
+                        <i>
+                            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+                                <circle cx="12"cy="4" r="2" />
+                                <circle cx="12"cy="12" r="2" />
+                                <circle cx="12"cy="20" r="2" />
+                            </svg>
+                        </i>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <button class="show-all"> Show All Surahs </button>
+        </div>
+
+
+
+        <div id="hadiths">
+
+            <h1 class="main-heading">
+                Hadiths Of The Prophet Muhammad (S.A.W)</h1>
+
+
+
+            <div class="hadith">
+                <h4>bukhari, hadeeth, hadith, islam, mohammed, muhammad, patience, perseverance, الحديث</h4>
+                <div>
+                    <h5> ما يصيب المسلم من نصب ولا وصب ولا همّ ولا حزن ولا أذى ولا غمّ - حتى الشوكة يشاكها - إلا كفّر الله بها مِن خطاياه</h5>
+					<p>No fatigue, disease, sorrow, sadness, hurt or distress befalls a Muslim - not even the prick he receives from a thorn - except that Allah expiates some of his sins because of it.</p> <em>(Sahih al-Bukhari, Book 70, #545)
+                    </em>
+                </div>
+            </div>
+            <div class="hadith">
+                <h4>Prophet muhammad, narrations, reports (bukhari, hadeeth, hadith, islam), الحديث-الشريف, حديث</h4>
+                <div>
+                   <h5> من قال عليّ ما لم أقل فليتبوأ مقعده من النار</h5>
+                   <p> Whoever ascribes to me what I have not said then let him occupy his seat in Hell-fire! </p><em>(Sahih al-Bukhari, Book 3, #109)</em>
+                </div>
+            </div>
+
+            <div class="hadith">
+                <h4>Hadith, Knowledge,Paradise, Religion</h4>
+                <div>
+                   <p> Whoever treads a path seeking knowledge, Allah will make easy for him the path to Paradise.</p>
+
+                    <em>(reported by Ibn Majah and others, fulfilling the conditions of Imam al Bukhari and Imam Muslim)</em>
+                </div>
+            </div>
+
+            <div class="hadith">
+                <h4>Good character</h4>
+                <div>
+                   <p> Ibn Mas'ud reported that the Messenger of Allah, may Allah bless him and grant him peace, said, "Shall I tell you who is unlawful for the Fire - or the one for whom the Fire is unlawful? It is unlawful for everyone who is easy, flexible, modest and uncomplicated.</p>
+                </div>
+            </div>
+
+            <div class="hadith">
+                <h4>Secrets of Divine Love Journal: Insightful Reflections that Inspire Hope and Revive Faith (I)</h4>
+                <div>
+                    <p>As Muslims we can advise one another from love, but the role of the Divine Judge, Al-Hakam, is purely reserved for Allah alone. As Muslims we can’t be harsh with the creation and expect the Creator of that creation to be soft with us. In fact, the Prophet<b> صلى الله عليه وسلم </b>tells us, “The merciful will be shown mercy by the Most Merciful. Be merciful to those on the earth and the One in the heaven will have mercy upon you.</p>
+
+                    <em>
+                        hadith, islam, islamic-quotes,sufi, sufi-quotes, sufi-stories, sunnah, sunni-quotes</em>
+
+                </div>
+            </div>
+            <div class="hadith">
+                <h4>Secrets of Divine Love Journal: Insightful Reflections that Inspire Hope and Revive Faith (II)</h4>
+
+                <div>
+                   <p> As the thirteenth-century mystic Ibn Ata’ Allah Al- Iskandari says, “Don’t think you are veiled from Allah by something that is not Allah. There is nothing besides Allah. You are veiled from Him by the illusion that there is something other than Allah.</p>
+                </div>
+            </div>
+
+
+            <div class="hadith">
+                <h4>Secrets of Divine Love Journal: Insightful Reflections that Inspire Hope and Revive Faith (III) </h4>
+                <div>
+                  <p>  The human being was created for something more than just living and dying by our egos and desires. Like granite, our egos are transformed and purified by the heat of worldly trials and friction into the precious ruby of the spirit. We were not sent to this Earth to achieve something, but rather to become what we have always been—a mirror for the divine qualities of Allah. We were created to know, love and worship Allah through purifying our hearts and becoming representatives of Allah’s mercy upon all of creation without discrimination.</p>
+                </div>
+            </div>
+            <div class="hadith">
+                <h4>Secrets of Divine Love Journal: Insightful Reflections that Inspire Hope and Revive Faith (IV) </h4>
+                <div>
+                 <p>   As Rumi says, “Raise your words, not your voice. It is rain that grows flowers, not thunder.” As Muslims we are called to guide one another, advise one another and to celebrate one another. The Qur’an’s command toward “enjoining what is right and forbidding what is wrong” <a href="zikr.html#Quran">(Qur’an 3:104) </a>is not an excuse for judging and shaming each other. As my teacher once said, “If you can’t counsel someone from love, then don’t counsel them because if you advise others from a place of judgment then you are fostering the quality of arrogance within you.</p>
+
+                </div>
+            </div>
+            <!-- <button class="show-all"> Show More Hadiths </button>-->
+        </div>
+
+    </main>
+</body>
+</html>

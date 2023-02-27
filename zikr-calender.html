@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calender</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="zikr-calender.css">
+
+    <script src="zikr-calender.js">
+    </script>
+
+</head>
+<body>
+
+    <div class="calender">
+        <div id="cal-wrap">
+            <div>
+                <!-- (A) PERIOD SELECTOR -->
+                <div id="cal-date">
+                    <a id="prev" > &#10094;</a>
+
+                    <select id="cal-mth"></select>
+                    <select id="cal-yr"></select>
+
+                    <a id="next"> &#10095;</a>
+
+                </div>
+
+                <!-- (B) CALENDAR -->
+                <div id="cal-container"></div>
+            </div>
+            <div>
+
+                <!-- (C) EVENT FORM -->
+                <form id="cal-event">
+                    <div class="btns">
+                        <input id="evt-del" type="button" value="Delete" />
+                        <input id="events" type="button" value="Event" />
+                    </div>
+                    <h1 id="evt-head"></h1>
+                    <div id="evt-date"></div>
+                    <textarea rows="2" id="evt-details" required></textarea>
+
+                </form>
+                <div class="colors">
+                    <p>
+                        Theme:
+                    </p>
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="bottom-btns">
+                    <input id="evt-close" type="button" value="Cancel" />
+                    <input id="evt-save" type="button" value="Save" />
+                </div>
+            </div>
+
+        </div>
+
+        <div class="prayer-time">
+            <h1>Prayer Timing</h1>
+            <span class="date english">Saturday, May 30 2022 </span>
+            <span class="date arabic"> Saturday, Sul-qhojah 23 1443</span>
+            <div class="solat">
+                <div class="solat-names">
+                    <h3>Solat</h3>
+                    <p>
+                        Fajr
+                    </p>
+                    <p>
+                        Zhuri
+                    </p>
+                    <p>
+                        Asri
+                    </p>
+                    <p>
+                        Mogrib
+                    </p>
+                    <p>
+                        Ishai
+                    </p>
+
+                </div>
+                <div class="solat-time-start">
+                    <h3>Start</h3>
+                    <p>
+                        6:00
+                    </p>
+                    <p>
+                        1:30
+                    </p>
+                    <p>
+                        3:00
+                    </p>
+                    <p>
+                        6:00
+                    </p>
+                    <p>
+                        7:30
+                    </p>
+
+                </div>
+                <div class="solat-time-end">
+                    <h3>Ellapse</h3>
+                    <p>
+                        6:00
+                    </p>
+                    <p>
+                        1:30
+                    </p>
+                    <p>
+                        3:00
+                    </p>
+                    <p>
+                        6:00
+                    </p>
+                    <p>
+                        7:30
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
