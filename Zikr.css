@@ -1,0 +1,1522 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+
+}
+
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 0px;
+
+}
+::-webkit-scrollbar-thumb {
+    background: grey;
+}
+
+body {
+    background: var( --white);
+    font-family: arial, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+    cursor: default;
+}
+
+
+.slider {
+    margin-top: 32px;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    /* border-top: 2px solid black;*/
+    position: relative;
+    background-color: #eaeaea;
+
+}
+
+
+
+
+
+
+.slide {
+    display: position;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 90%;
+    padding: 5px 0;
+    margin: auto;
+
+    background-color: #eaeaea;
+    text-align: left;
+    color: var( --black);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    /* -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;*/
+    opacity: 0;
+    visibility: hidden;
+
+}
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slide h1 {
+    font-size: .95em;
+
+    margin: 5px 10px 0 10px;
+    max-width: 60%;
+    font-style: italic;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.slide h1 b {
+    color: orange !important;
+    font-size: 1.1em;
+}
+.slide p {
+    font-size: .8em;
+    margin: 5px 10px;
+    max-width: 50%;
+}
+.slide .image {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 8%;
+    margin: auto 0;
+    outline: 2px solid var(--black);
+    border: 1px solid var(--black);
+    outline-offset: 5px;
+    width: 30%;
+    height: 40%;
+    border-radius: 2px;
+}
+.slide .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
+.slide .btn {
+    display: flex;
+    align-items: center;
+    height: max-content;
+    margin-bottom: 15px;
+}
+.slide a {
+    text-decoration: none;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 2px 5px;
+    text-transform: uppercase;
+    font-size: .6em;
+    color: var(--black);
+    align-self: flex-start;
+    z-index: 0;
+    transition: hover .6s ease, all .6s ease;
+    border: 1px solid var(--black);
+    background: #eaeaea;
+}
+
+
+.slide a:active {
+    position: relative;
+    transform: translatey(-5px);
+    z-index: 1;
+
+}
+.slide a.active,
+.slide a:hover {
+
+    background-color: orange;
+
+}
+.link {
+    text-align: center;
+    max-width: 35%;
+    z-index: 50;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    display: flex;
+
+    flex-wrap: wrap;
+
+}
+.link a.cell {
+
+    margin: 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid var(--black);
+    background-color: var(--white);
+    transition: all 300ms ease;
+    display: inline-block;
+    z-index: 10;
+    cursor: pointer;
+}
+.link a.cell:hover,
+.link a.active {
+    background: var(--black);
+    transform: scale(1.2);
+
+}
+
+/*
+.link a.cell.stretch {
+    transition: transform 1s ease;
+
+    background: var(--black);
+    transform: translateX(10px) scaleX(calc(1 * 2.3));
+    border-radius: 3px;
+    z-index: 100;
+}
+.link a.cell.stretch-opposite {
+    transition: transform 1s ease;
+    background: var(--black);
+    transform: translateX(-10px) scaleX(calc(1 * 2.5));
+    border-radius: 3px;
+    z-index: 100;
+}
+
+*/
+
+/* slider controls. */
+
+
+
+#controls {
+    opacity: 0;
+    transition: all 300ms ease  , hover 300ms ease;
+}
+
+.slider:hover #controls {
+    z-index: 50;
+    opacity: 1;
+}
+
+
+.next,
+.prev {
+
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+    font-size: 1.2em;
+    padding: 5px;
+    margin: auto 0;
+    color: black;
+    transition: all .6s ease, hover .6s ease-in-out;
+    cursor: pointer;
+}
+
+.prev {
+    left: 0%;
+    border-radius: 5px 0 0 5px;
+}
+.next {
+    right: 0%;
+    border-radius: 0 5px 5px 0;
+}
+.next:hover,
+.prev:hover {
+    background: rgba(0,0,0,.8);
+    color: rgb(255,255,255);
+
+}
+
+
+
+
+/* Center the loader */
+
+#loader {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    animation: rotator var(--duration) linear infinite,color var(--duration) linear infinite;
+    stroke: orangered;
+}
+
+
+.path {
+    stroke-dasharray: var(--offset);
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    animation: dash var(--duration) ease-in-out infinite, colors calc(var(--duration)*4) ease-in-out infinite;
+}
+
+
+.calender {
+    margin-top: 40px !important;
+}
+
+
+
+
+main {
+    width: 100%;
+    height: max-content;
+}
+main .main-heading {
+    margin: 1em auto;
+    width: 95%;
+    font-size: 1.2em;
+    text-align: center;
+    position: sticky;
+    top: 40px;
+    z-index: 100;
+    background: var(--white);
+}
+
+.Quran, 
+.Hadiths {
+    width: 100%;
+    height: max-content;
+    margin: 1em auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Quran .tags ,
+.Hadiths .tags {
+    width: 95%;
+    height: 40px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 60px;
+    z-index: 100;
+    background: var(--white);
+}
+
+.Quran .tags .surahs,
+.Hadiths .tags .books{
+    flex: 0 0 40%;
+    height: 100%;
+    border: 1px solid var(--black);
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    background: var(--white);
+    text-align: center;
+
+}
+.Quran .tags .search,
+.Hadiths .tags .search {
+    flex: 0 0 40%;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--black);
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    background: var(--white);
+
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 5px 0;
+    width: 80%;
+    height: 150px !important;
+    background: var(--medium-white);
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: 100;
+}
+.dropdown p {
+    font-size: .9em;
+    padding: 5px 10px;
+    color: var(--black);
+    text-align: left;
+    order: 5;
+
+}
+.dropdown p:hover {
+    background: var(--light-grey);
+}
+.dropdown p.predict {
+    order: 2;
+}
+.dropdown p.accurate {
+    order: 1;
+    background: var(--light-black);
+    color: var(--white);
+}
+.dropdown::-webkit-scrollbar {
+    width: 6px;
+    height: 0;
+    background: var(--light-grey);
+    border-radius: 100px;
+
+}
+.dropdown::-webkit-scrollbar-thumb {
+    background: var(--black);
+    border-radius: 100px;
+    height: 12px;
+}
+.Quran .tags .search * ,
+.Hadiths .tags .search * {
+    height: 100%;
+
+}
+.Quran .tags .search a ,
+.Hadiths .tags .search a{
+    text-decoration: none;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cal-bg);
+    color: var(--white);
+    height: 90%;
+
+    border-radius: 3px;
+}
+.Quran .tags .search a:hover ,
+.Hadiths .tags .search a:hover{
+    background: var(--grey);
+    transition: all 500ms ease;
+}
+.Quran .tags .search a:active svg ,
+.Hadiths .tags .search a:active svg {
+    stroke: white;
+    transform: scale(.8);
+}
+.search a:hover svg {
+    stroke: white;
+}
+.Quran .tags .search input ,
+.Hadiths .tags .search input {
+    width: 75%;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.search ::placeholder {
+    color: var(--black);
+}
+.Quran .tags .surahs p ,
+.Hadiths .tags .books p {
+    font-size: .8em
+    text-align: center;
+    padding: 5px;
+    margin: 3px 2px;
+    border-radius: 3px;
+}
+.Quran .tags .surahs p:first-child ,
+.Hadiths .tags .books p:first-child {
+    background: var(--cal-bg);
+    color: var(--white);
+}
+.surahs p > span,
+.books p > span{
+    font-weight: bolder;
+}
+.Quran #verses,
+.Hadiths #collections{
+    background: var(--white);
+
+
+    width: 98%;
+    max-height: 480px;
+    margin: 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-y: hidden;
+
+}
+#verses .verse .voice,
+#collections .chapter .voice {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 5px;
+    padding: 3px;
+    color: inherit;
+
+}
+#verse .verse .voice:hover,
+#collections .chapter .voice:hover{
+    
+}
+#verses .verse .voice:hover .round,
+#verses .verse .voice.active .round ,
+#collections .chapter .voice:hover .round,
+#collections .chapter .voice.active .round {
+    fill: currentColor;
+}
+#verses .verse.result .voice:hover ,
+#collections .chapter.result .voice:hover{
+    background: var(--transparent-black);
+
+}
+#verses .verse  {
+    align-self: stretch;
+    flex: 1 1 40%;
+    width: 200px;
+    height: max-content;
+    min-height: 100px;
+    margin: 10px 5px;
+    padding-bottom: 10px;
+    border: 1px solid var(--black);
+    position: relative;
+    cursor: pointer;
+    
+}
+#collections .chapter {
+    align-self: stretch;
+    flex: 1 1 40%;
+    width: 200px;
+    height: max-content;
+    min-height: 70px;
+    margin: 10px 5px;
+    padding: 2px;
+display : flex;
+    align-items: center;
+    justify-content: center;
+border: 1px solid var(--black);
+    position: relative;
+    cursor: pointer;
+}
+#verses .verse > .info,
+#collections .chapter > .info{
+    position: absolute;
+    top: 30%;
+    right: 0;
+    background: var(--light-grey);
+    color: var(--black) !important;
+
+    width: max-content;
+
+}
+
+#verses .verse > .info p ,
+#collections .chapter > .info p{ 
+    font-size: .9em;
+    padding: 7px 10px;
+    color: var(--black) !important;
+
+
+}
+#verses .verse > .info p:hover ,
+#collections .chapter > .info p;hover{
+    background: grey;
+}
+#verses .verse > .info p+p ,
+#collections .chapter > .info p+p{
+    border-top: var(--medium-white);
+}
+/* search result */
+
+.verse:hover ,
+.verse.result,
+.chapter:hover ,
+.chapter.result {
+    background: var(--orange);
+    color: var(--white);
+}
+#verses .verse.result > div span ,
+#collections .chapter.result > div span {
+    background: var(--black);
+    color: var(--white);
+}
+#verses .verse > div,
+#collections .chapter > div {
+    height: 80%;
+    display: flex;
+
+
+    align-items: center;
+}
+#collections .chapter > div{
+    width: 100%;
+   
+    margin: auto 0 !important;
+}
+#verses .verse > div h3,
+#collections .chapter > div h3 {
+    font-size: 1.2em;
+    margin-right: 5px;
+    margin-left: auto;
+
+    text-transform: uppercase;
+
+}
+#collections .chapter > div h3 {
+    font-size: 1em;
+    margin: 2px;
+   
+
+    text-transform: none;
+
+}
+#collections .chapter > div section {
+    font-size: .8em;
+    flex:1 1 40%;
+    align-self: stretch;
+    height: 100%;
+
+}
+#verses .verse > div i ,
+#collections .chapter > div i {
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#collections .chapter > div i {
+    align-self: flex-start !important;
+}
+#verses .verse > div i:hover,
+#collections .chapter > div i:hover{
+    background: var(--medium-white);
+}
+#verses .verse.result > div i:hover ,
+#collections .chapter > div i:hover{
+    background: var(--transparent-black);
+
+}
+#verses .verse.result > p:nth-of-type(2),
+#collections .chapter.result > p:nth-of-type(2){
+    color: var(--light-grey);
+    text-transform: lowercase;
+
+}
+#verses .verse > div span ,
+#collections .chapter > div span{
+    font-size: .9em;
+    text-align: center;
+    width: 30px;
+    height: 20px;
+    line-height: 20px;
+    background: var(--cal-bg);
+    margin: 0 3px;
+    border-radius: 2px;
+    direction: rtl;
+    color: var(--white);
+    font-weight: bold;
+}
+#collections .chapter > div span{
+    margin: auto 3px !important;
+    height: 50px !important;
+    width: 30% !important;
+border-radius: 5px;
+    
+}
+#verses .verse > p ,
+#collections .chapter > p{
+    font-size: .95em;
+    max-width: 70%;
+    margin: 5px auto;
+    text-transform: uppercase;
+
+
+}
+#verses .verse > p > p,
+#collections .chapter > p > p{
+    color: cyan;
+    display: inline;
+    margin-left: 0;
+
+}
+
+#verses .verse > p:nth-of-type(2),
+#collections .chapter > p:nth-of-type(2){
+    font-size: .8em;
+    max-width: 68%;
+    margin: 5px auto;
+    padding-bottom: 10px;
+    color: var(--light-black);
+    font-style: italic;
+
+}
+
+.show-all {
+
+    outline: none;
+    border: none;
+    width: 200px;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid var(--black);
+    cursor: pointer;
+    transition: all 500ms ease;
+}
+.show-all:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+
+
+
+
+
+.advert {
+    width: 100%;
+    height: 250px;
+    margin: auto;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    position: relative;
+    /*background-color: #dadada;
+    background-image: url(condala-images/sale.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    transition: all .5s ease-in-out;
+    color: white;*/
+}
+
+.advert h1 {
+    font-size: 1em;
+
+    margin: 5px 10px 0 10px;
+    max-width: 60%;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.advert h1 b {
+    color: orange !important;
+    font-size: 1.1em;
+}
+.advert p {
+    font-size: .75em;
+    margin: 5px 10px;
+    max-width: 50%;
+}
+.advert .image {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 8%;
+    margin: auto 0;
+    outline: 2px solid var(--black);
+    border: 1px solid var(--black);
+    outline-offset: 5px;
+    width: 30%;
+    height: 40%;
+    border-radius: 2px;
+}
+.advert .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
+.element-btn:hover {
+    background: var( --green);
+    color: var( --white);
+}
+.element-btn {
+width: max-content;
+    background: none;
+    color: var(--black);
+    outline: none;
+    border: none;
+    border: 1px solid var(--black);
+    padding: 6px 12px;
+    font-size: .9em;
+    border-radius: 5px;
+    margin: 10px;
+    transition: all 200ms;
+}
+/*///// hadiths //*/
+
+/*
+#hadiths {
+
+    background: var(--light-grey);
+    margin: 1em auto;
+    align-items: flex-start;
+}
+#hadiths .main-heading {
+    background: var(--light-grey);
+
+}
+.hadith {
+    width: 90%;
+    height: max-content;
+    margin: 1em auto;
+    background: var(--medium-white);
+    border-radius: 0 20px 20px 20px;
+    padding: 1em;
+}
+.hadith h4 {
+    font-size: 1.2em;
+    color: darkred;
+    text-shadow: -1px -1px var(--black);
+    letter-spacing: 2px;
+}
+.hadith h4:first-letter {
+    font-size: 1.3em;
+}
+.hadith div {
+    width: 95%;
+    height: max-content;
+
+    max-height: 200px;
+    overflow-y: scroll;
+    padding: 10px;
+    background: var(--light-grey);
+    color: var(--black);
+    margin-top: 5px;
+    border-radius: 0 15px 15px 15px;
+    font-weight: 420;
+    word-spacing: 1px;
+    line-height: 1.4em;
+    transition: all 500ms ease;
+    position: relative;
+}
+.hadith div em {
+    color: teal;
+}
+.hadith div a {
+    text-decoration: none;
+    color: inherit;
+}
+.hadith div a:hover,
+.hadith div a:active,
+.hadith div a:visited {
+    text-decoration: underline;
+    color: darkred;
+}
+.hadith div h5 {
+    font-size: 1.3em;
+    color: var(--white);
+    direction: rtl;
+    text-shadow: 1px 1px var(--black);
+
+}
+.hadith div b {
+    color: var(--white);
+}
+.hadith .more {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 0px;
+
+    display: none;
+}
+.hadith:hover div {
+    margin-left: 1em;
+
+}
+
+*/
+
+
+#Quran-loader >div {
+
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    perspective: 800px;
+}
+#Quran-loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+
+    background: rgba(0,0,0,.8);
+    z-index: 0;
+    display: none;
+}
+#Quran-loader.active {
+    z-index: 1000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inner {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.inner.one {
+    left: 0%;
+    top: 0%;
+    animation: rotate-one 1s linear infinite;
+    border-bottom: 3px solid #EFEFFA;
+}
+
+.inner.two {
+    right: 0%;
+    top: 0%;
+    animation: rotate-two 1s linear infinite;
+    border-right: 3px solid #EFEFFA;
+}
+
+.inner.three {
+    right: 0%;
+    bottom: 0%;
+    animation: rotate-three 1s linear infinite;
+    border-top: 3px solid #EFEFFA;
+}
+
+@keyframes rotate-one {
+    0% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
+}
+
+@keyframes rotate-two {
+    0% {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+
+@keyframes rotate-three {
+    0% {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
+}
+
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0%;
+    margin: auto;
+    background: var(--white);
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    visibility: hidden;
+    opacity: 0;
+    color: var(--black);
+    overflow: hidden;
+    transform: scale(-1);
+    transition: all 500ms ease, transform 500ms linear;
+}
+.modal.active {
+    opacity: 1;
+    transition: all 400ms, transform 1s cubic-bezier(0,1,.5,1);
+    z-index: 100000000200;
+    visibility: visible;
+    transform: scale(1);
+}
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 15px !important;
+    font-size: 2em;
+    font-weight: bolder;
+    color: red;
+    opacity: 1;
+    z-index: 10;
+    cursor: default;
+    padding: 0px 10px;
+    background: transparent;
+    border-radius: 50%;
+    transition: all 300ms;
+    text-shadow: 0 0 5px white;
+}
+.close:hover {
+    color: darkred;
+
+    background: #eee;
+}
+.modal .modal-head {
+    position: relative;
+    width: 100%;
+    height: 10%;
+    background-color: #111;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+
+    transition: all 400ms, transform 1s ease;
+}
+.modal .modal-head div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align:: left;
+    max-width: max-content;
+    margin: 0 10px;
+    font-weight: 500;
+    font-style: roboto;
+
+}
+.modal .modal-head div p {
+    font-size: .8em;
+}
+.modal .modal-content h1 {
+    font-size: 1.3em;
+    margin: 5px;
+    line-height: .9em;
+    text-transform: uppercase;
+    max-width: 50%;
+}
+
+.modal .modal-content > p {
+    font-size: 1em;
+    max-width: 60%;
+    font-weight: 450;
+    text-transform: uppercase;
+}
+
+
+.modal .modal-content {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-image: url('5.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transition: all 400ms, transform 1s ease;
+    padding: 1em 1.2em;
+    filter: brightness(100%);
+
+}
+
+.modal-content div {
+    flex-grow: 1;
+
+    background: var(--white);
+    width: 90%;
+    height: 100%;
+    margin: 1em auto;
+    font-size: 1em;
+    color: #000;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 0 0 30% 30%;
+    padding-bottom: 1.5em;
+    padding-right: 1em;
+
+}
+.modal .modal-content div >*:first-child {
+
+    text-align: center !important;
+    font-weight: 420;
+    font-size: 1.15em;
+
+}
+.modal .modal-content div p {
+    text-align: right;
+    font-size: 1.1em;
+    line-height: 2.5em;
+    direction: rtl;
+    word-spacing: 3px;
+    /* border-width: 1px 0;
+    border-style: solid;
+    border-color: #888;*/
+}
+.modal .modal-content div a {
+    text-align: right;
+    font-size: 1.1em;
+    line-height: 2.5em;
+    direction: rtl;
+    word-spacing: 3px;
+}
+.modal .modal-content div p >span {
+    color: red;
+    margin-right: 1em;
+    font-size: .9em;
+}
+.modal .modal-foot {
+    width: 100%;
+    height: 10%;
+    background-color: #111;
+    color: var(--white);
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+.modal .modal-foot > * {
+    margin: 0 10px;
+    font-weight: 500;
+    font-style: roboto;
+}
+
+.modal .modal-foot div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align:: left;
+    max-width: max-content;
+    margin: 0 10px;
+
+}
+/*
+.modal .modal-foot #Mainplayer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+#Mainplayer audio {
+    width: 100%;
+    outline: none;
+}
+#play-pause {
+    cursor: pointer;
+}
+*/
+.modal .modal-foot #Mainplayer {
+    background: var(--transparent-black);
+    width: 40px;
+    height: 40px;
+    transform: translateX(80px);
+    transition: all 400ms cubic-bezier(0,1,.5,1),opacity 400ms 300ms,width 400ms 300ms cubic-bezier(0,1,.5,1);
+    visibility: hidden;
+    padding: 5px 10px;
+    border-radius: 100px;
+    z-index: 0;
+    opacity: 0;
+}
+.modal .modal-foot #Mainplayer.active {
+    width: 50%;
+    transform: translateX(0px);
+    visibility: visible;
+    opacity: 1;
+    z-index: 5;
+    border-radius: 0px;
+    transition: border-radius 1.5s 1s, opacity 400ms 300ms,transform 400ms cubic-bezier(0,1,.5,1) 400ms,width 400ms;
+}
+.modal .modal-foot div p {
+    font-size: .8em;
+}
+.modal .modal-foot a {
+    text-decoration: none;
+    color: var(--light-grey);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--transparent-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    transition: all 400ms cubic-bezier(0,1,.5,1);
+}
+.modal .modal-foot a svg {}
+.modal .modal-foot a .round {
+    fill: currentColor;
+}
+.modal .modal-foot a:active {
+    transform: scale(.9);
+    width: 80px;
+    justify-content: flex-end;
+    border-radius: 100px;
+}
+.close:hover {
+    color: darkred;
+    text-shadow: 1px 1px 5px var(--white);
+}
+
+
+.heartBeat {
+    -webkit-animation: heartBeat 2s ease-in-out 3;
+    animation: heartBeat 2s ease-in-out 3;
+    stroke-width: 1.8px;
+
+}
+
+
+
+
+/*Loading Animation */
+
+@-webkit-keyframes heartBeat {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    14% {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+
+    28% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    42% {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+
+    70% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes heartBeat {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    14% {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+
+    28% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    42% {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+
+    70% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+
+@keyframes rotator {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(270deg);
+    }
+}
+
+@keyframes colors {
+    0% {
+        stroke: #4285F4;
+    }
+
+    25% {
+        stroke: #DE3E35;
+    }
+
+    50% {
+        stroke: #F7C223;
+    }
+
+    75% {
+        stroke: #1B9A59;
+    }
+
+    100% {
+        stroke: #4285F4;
+    }
+}
+@keyframes dash {
+    0% {
+        stroke-dashoffset: var(--offset);
+    }
+
+    50% {
+        stroke-dashoffset: var(--offset)/4;
+        transform: rotate(135deg);
+    }
+
+    100% {
+        stroke-dashoffset: var(--offset);
+        transform: rotate(450deg);
+    }
+}
+
+
+/* Slide Animations */
+
+@keyframes slide-Left-in {
+    0% {
+        transform: translateX(100%);
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes slide-Left-out {
+    0% {
+        transform: translateX(0%);
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes slide-Right-in {
+    0% {
+        transform: translateX(-100%);
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes slide-Right-out {
+    0% {
+        transform: translateX(0%);
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes rotate-loading {
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+/* Media Query */
+@media screen and (min-width: 700px) {
+    .slider {
+        height: 280px;
+
+    }
+    .slide {
+
+        padding: 0 1em;
+    }
+    .slide h1 {
+        font-size: 1.1em;
+        max-width: 50%;
+    }
+    .slide p {
+        font-size: 1em;
+        max-width: 30%;
+    }
+    .slide .image {
+        width: 25%;
+        height: 60%;
+        outline-offset: 3px;
+    }
+    .prev {
+        left: 0.5%;
+        border-radius: 5px 0 0 5px;
+    }
+    .next {
+        right: 0.5%;
+    }
+    .Quran .tags .surahs {
+        flex: 0 0 30%;
+    }
+    .Quran .tags .search {
+        flex: 0 0 30%;
+    }
+    .Quran .tags .search input {
+        text-indent: 5px;
+    }
+    .Quran .tags {
+        width: 80%;
+    }
+    .Quran #verses {
+        width: 80%;
+    }
+    #verses .verse {
+        flex: 1 1 20%;
+    }
+    .hadith h4 {
+        max-width: 60%;
+    }
+    .hadith div {
+        max-width: 70%;
+    }
+
+}
+@media screen and (max-width: 600px) {
+    ::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+
+    }
+    .modal-content div::-webkit-scrollbar {
+        width: 6px;
+        height: 0;
+        background: var(--light-grey);
+        border-radius: 100px;
+
+    }
+    .modal-content div::-webkit-scrollbar-thumb {
+        background: var(--black);
+        border-radius: 100px;
+        height: 12px;
+    }
+    /*
+
+    .modal .modal-foot #Mainplayer {
+        font-size: .7em;
+        justify-content: center;
+        align-items: flex-end;
+        max-width: 55%;
+        position: relative;
+        padding: 10px 0;
+        height: 100%;
+    }
+    .modal-foot #Mainplayer div {
+        height: max-content;
+
+    }
+    .modal-foot #Mainplayer input {
+        height: 5px;
+        max-width: 55%;
+        margin-bottom: 3px;
+    }
+    .modal-foot #Mainplayer #play-pause {
+
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: absolute;
+        top: 2%;
+        padding: 5px 10px;
+        margin: 0 auto;
+
+    }
+    .modal-foot #Mainplayer #play-pause:hover {
+
+        color: red;
+    }*/
+
+    .dropdown {
+        width: 100%;
+    }
+    .dropdown p {
+        font-size: .8em;
+    }
+    .Quran .tags .surahs p,
+        .Hadiths .tags .books p{
+        font-size: .8em;
+        line-height: 1em;
+
+    }
+    .verse audio,
+    .chapter audio{
+        width: 50%;
+        height: 20px;
+    }
+    .Quran #verses {}
+    .modal .modal-content h1 {
+        font-size: 1em;
+    }
+    .modal .modal-content p {
+        font-size: .8em;
+    }
+}
+
+
+@media screen and (min-width: 700px) and (max-width: 800px) {
+    #verses .verse ,
+        #collections .chapter {
+        flex: 1 1 30%;
+    }
+    .advert-bar {
+
+        height: 40%;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    body {
+        font-size: .7em;
+    }
+
+}
