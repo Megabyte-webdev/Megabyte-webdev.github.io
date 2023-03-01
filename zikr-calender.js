@@ -63,15 +63,24 @@ const init = () => {
     Themebtn = document.querySelectorAll('.colors span');
 
     Themebtn.forEach((e, index) => {
+var Bg = window.getComputedStyle(e).backgroundColor;
 
+    if(e.className == "active"){
+decorate(index, Bg)
+    }
         var n = index;
         e.onclick = function(e) {
+var Bg = window.getComputedStyle(this).backgroundColor;
             for (var i = 0; i < Themebtn.length; i++) {
                 Themebtn[i].className = "";
             }
-            var Bg = window.getComputedStyle(this).backgroundColor;
-
+            
             Themebtn[n].className = "active";
+decorate(n, Bg)
+};
+    })
+
+function decorate(n, Bg){
             if (n === 1) {
                 theme1(Bg);
             } else if (n === Themebtn.length-1) {
@@ -80,11 +89,7 @@ const init = () => {
             } else {
                 DefaultTheme();
             }
-
-
-        };
-    })
-
+}
     // (B2) DATE NOW
     let now = new Date(),
     nowMth = now.getMonth(),
@@ -351,7 +356,7 @@ function theme1(B) {
     r.style.setProperty('--cal-white', '#444');
     r.style.setProperty('--cal-black', 'white');
 
-    r.style.setProperty('--cal-bg', B);
+    r.style.setProperty('--cal-bg', "#002");
 
     r.style.setProperty('--cal-lightgrey', '#111');
 
@@ -363,7 +368,7 @@ function theme1(B) {
 
 }
 
-function theme2(B) {
+function theme2(R) {
     var r = document.querySelector(':root');
 
 
@@ -371,7 +376,7 @@ function theme2(B) {
     r.style.setProperty('--cal-white', '#100');
     r.style.setProperty('--cal-black', 'white');
 
-    r.style.setProperty('--cal-bg', B);
+    r.style.setProperty('--cal-bg', R);
 
     r.style.setProperty('--cal-lightgrey', '#f00');
 
