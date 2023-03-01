@@ -400,8 +400,7 @@ let times = document.querySelector('.prayer-time').innerHTML = "<h1 class='mx-au
     }
 
 
-    getHadiths("http://alquranbd.com/api/hadith")
-
+    
     async function getHadiths(url) {
 
 
@@ -1095,5 +1094,10 @@ isAvailable ?  show(save_data[updateApiUrl]) : getApi(updateApiUrl);
         audio.pause();
 
     }
+
+
+
+getHadiths("http://alquranbd.com/api/hadith")
+
 
 });
