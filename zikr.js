@@ -24,9 +24,19 @@ window.addEventListener("load", function() {
     var showAll = document.querySelectorAll('.show-all');
 
     // Read("welcome back")
-    var images = ['Quran.jpg', 'praying.jpg ', 'Quran2.jpg', 'Allah.jpg', 'surah-white.jpg'];
+    var images = ['quran.png', 'praying.jpg ', 'Quran2.jpg', 'Allah.jpg', 'surah-white.jpg', 'kaaba.jpg'];
 
     var slide = document.querySelectorAll('.slide');
+    slide.forEach(e=> {
+        let text = e.querySelector('h1');
+        if (text.innerHTML.match(/Read/gi)) {
+            text.innerHTML.replace(/Read/gi, "<strong>iRead</strong>")
+            console.log(text.innerHTML)
+        }
+
+    })
+
+
     var current = 0,
     confirmIndex = [current - 1],
     Slide;
@@ -41,12 +51,7 @@ window.addEventListener("load", function() {
         e.onclick = function() {
             var Verses = document.querySelector('#verses');
             var hadiths = document.querySelector('#hadiths');
-            if (index === 0) {
-                Verses.style.maxHeight = "max-content";
-            } else {
-                hadiths.style.maxHeight = "max-content";
-
-            }
+            this.previousElementSibling.style.maxHeight = "max-content";
 
             this.style.display = "none";
         }
@@ -394,10 +399,57 @@ let times = document.querySelector('.prayer-time').innerHTML = "<h1 class='mx-au
 
     }
 
-let savedAud=null,
-savedSurah=null,
-clic
-savedVerses=null;
+
+    getHadiths("http://alquranbd.com/api/hadith")
+
+    async function getHadiths(url) {
+
+
+        try {
+
+
+            var response = await fetch(url);
+
+            // Storing data in form of JSON
+
+            var data = await response.json()
+
+
+
+
+            if (response) {
+
+                hideloader();
+
+            }
+
+
+
+            console.log(data)
+
+            loadHadiths(data)
+            //saveSurah(data);
+        }catch(err) {
+            errorHandle(err);
+            //hideloader();
+        }
+
+
+
+
+    }
+
+
+
+    let savedAud = null,
+    savedSurah = null,
+    clic
+    savedVerses = null;
+
+
+
+
+
 
     async function getAudioApi(i, l) {
         var loadSvg = document.querySelector('.modal-foot a svg');
@@ -426,11 +478,11 @@ savedVerses=null;
             let audio_data = data.data[0];
             let en_translation = data.data[1];
             let ur_translation = data.data[2]
-          let ay= null
+            let ay = null
             doc(audio_data, i, l, ay)
-            savedAud=audio_data
-             savedSurah= i
-             savedVerses=l
+            savedAud = audio_data
+            savedSurah = i
+            savedVerses = l
         }catch(err) {
             alert("eror in parsing audio data");
             hideloader();
@@ -497,18 +549,16 @@ savedVerses=null;
             } else {
                 surahContent.innerHTML += "<p id="+i+">"+chapterVerse[i].text+ "<span>("+arabicNumeral(i+1)+")</span></p>";
             }
-            
+
         }
-            
-/*let written_ayahs=document.querySelectorAll(".modal-content div p");
-            
+
+        /*let written_ayahs=document.querySelectorAll(".modal-content div p");
             written_ayahs.forEach((e, index)=>{
                 e.onlick=()=>{
                 alert(e.innerHTML)
                 for(let m=0; m<=written_ayahs.length; m++){
                     written_ayahs[m].style.color="black"
                 }
-                
    e.style.color="blue"
    clickedAyah=index;
 doc(savedAud, savedSurah, savedVerses)
@@ -525,7 +575,7 @@ doc(savedAud, savedSurah, savedVerses)
     function doc(audio_data, surah, verses) {
 
 
-var ayahsArray = document.querySelectorAll('.modal-content div > *');
+        var ayahsArray = document.querySelectorAll('.modal-content div > *');
 
         var ayahsAudioArray = audio_data.ayahs;
 
@@ -534,14 +584,14 @@ var ayahsArray = document.querySelectorAll('.modal-content div > *');
         let i = 0
 
 
-        
-        
-        
+
+
+
         console.log(audio_data)
 
-audioTag.src = ayahsAudioArray[i].audio;
+        audioTag.src = ayahsAudioArray[i].audio;
 
-ayahsArray[i+1].style.color = 'green';
+        ayahsArray[i+1].style.color = 'green';
         audioTag.addEventListener('ended', () => {
 
             ayahsArray[i+1].style.color = 'black'
@@ -558,7 +608,7 @@ ayahsArray[i+1].style.color = 'green';
                 i = 0
                 return;
             }
-        
+
         });
 
 
@@ -922,9 +972,61 @@ ayahsArray[i+1].style.color = 'green';
 
 
     })
-    divs.forEach((e, index) => {
-        //e.onclick
-    });
+    function loadHadiths(data) {
+
+        let container = document.querySelector("#collections")
+
+
+
+        data.forEach(kitab=> {
+
+            var icon2 = document.createElement('i');
+
+            var div = document.createElement('div');
+            div.className = "chapter";
+
+            icon2.className = 'voice';
+            icon2.innerHTML = `<svg viewBox="0 0 24 24" stroke="currentColor" width="24" fill="transparent" height="24"><path class="round" fill="none" d="M8 12L8 4A 5 5 0 0 1 16 4L16 12A 5 5 0 0 1 8 12" /><path id="speaker2" d="M4 8A 5 5 0 0 0 20 8M12 16V22M8 22H16" /> </svg>`;
+
+
+
+            let html = `<div>
+            <span>
+            <svg viewBox="0 0 24 24" width="50" height="50" fill="white" stroke="#fff">
+            <path id="book-icon1" d="M2 8V20c 0 -4, 10 -4, 10 0V8M2 8 C 2 4,12 4,12 8" fill="white" />
+            <path id="book-icon2" d="M12 8C12 4, 22 4,22 8V20M12 20c0 -4,10 -4,10 0" fill="transparent" />
+            </svg>
+            </span>
+            <section>
+            <h3>${kitab.nameEnglish}</h3>
+            <p>${kitab.book_key}</p>
+            </section>
+
+            <i>
+            <svg viewBox="0 0 24 24" width="24" height="20" fill="currentColor" stroke="none">
+            <circle cx="12"cy="4" r="2" />
+            <circle cx="12"cy="12" r="2" />
+            <circle cx="12"cy="20" r="2" />
+            </svg>
+            </i>
+
+            </div>`
+
+
+
+
+            div.innerHTML = html
+            div.appendChild(icon2);
+
+            container.appendChild(div)
+        });
+
+
+
+
+    }
+
+
 
     function Quran(e, count, index) {
 
