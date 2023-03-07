@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 * {
     margin: 0;
     box-sizing: border-box;
     padding: 0;
+    font-family: 'Montserrat', sans-serif;
 
 }
 
@@ -129,6 +131,7 @@ button {
     align-items: center;
     height: max-content;
     margin-bottom: 15px;
+  
 }
 .slide a {
     text-decoration: none;
@@ -143,7 +146,7 @@ button {
     align-self: flex-start;
     z-index: 0;
     transition: hover .6s ease, all .6s ease;
-    border: 1px solid var(--black);
+    border: 1px solid orange;
     background: #eaeaea;
 }
 
@@ -442,7 +445,7 @@ main .main-heading {
 }
 .Quran .tags .surahs p ,
 .Hadiths .tags .books p {
-    font-size: .8em
+    font-size: .8em;
     text-align: center;
     padding: 5px;
     margin: 3px 2px;
@@ -545,7 +548,7 @@ border: 1px solid var(--black);
 
 }
 #verses .verse > .info p:hover ,
-#collections .chapter > .info p;hover{
+#collections .chapter > .info p:hover{
     background: grey;
 }
 #verses .verse > .info p+p ,
@@ -1009,7 +1012,7 @@ width: max-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align:: left;
+    text-align: left;
     max-width: max-content;
     margin: 0 10px;
     font-weight: 500;
@@ -1119,7 +1122,7 @@ width: max-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align:: left;
+    text-align:left;
     max-width: max-content;
     margin: 0 10px;
 
@@ -1177,7 +1180,7 @@ width: max-content;
     user-select: none;
     transition: all 400ms cubic-bezier(0,1,.5,1);
 }
-.modal .modal-foot a svg {}
+/* .modal .modal-foot a svg {} */
 .modal .modal-foot a .round {
     fill: currentColor;
 }
@@ -1201,6 +1204,10 @@ width: max-content;
 }
 
 
+/* solat time modifying  */
+.solat-time td {
+    padding: .2rem .5rem;
+}
 
 
 /*Loading Animation */
