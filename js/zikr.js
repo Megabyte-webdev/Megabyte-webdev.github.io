@@ -24,7 +24,7 @@ window.addEventListener("load", function() {
     var showAll = document.querySelectorAll('.show-all');
 
     // Read("welcome back")
-    var images = ['quran.png', 'praying.jpg ', 'Quran2.jpg', 'Allah.jpg', 'surah-white.jpg', 'kaaba.jpg'];
+    var images = ['../img/quran.png', '../img/praying.jpg ', '../img/Quran2.jpg', '../img/Allah.jpg', '../img/surah-white.jpg', '../img/Kaaba.jpg'];
 
     var slide = document.querySelectorAll('.slide');
     slide.forEach(e=> {
