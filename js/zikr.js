@@ -21,6 +21,27 @@ var updateApiUrl = null,
 urlContent = null;
 // slideshow //
 window.addEventListener("load", function() {
+
+const blogdb_data={
+        name: "Mubarak",
+        age: 18
+    };
+
+fetch('https://api.github.com/repos/{Afolabi Mubarak}/{Megabyte-webdev}/contents/{blogdb}.json', {
+    method: 'PUT',
+    headers: {
+        'Authorization': 'Bearer ' + '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',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(blogdb_data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => alert(error));
+ 
+
+
+
     var showAll = document.querySelectorAll('.show-all');
 
     // Read("welcome back")
